@@ -1,7 +1,19 @@
 // AI Chat Icon Components
 
-export const SphereIcon = () => (
-<svg width="74" height="74" viewBox="0 0 74 74" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+  export const SphereIcon = ({
+    width = 74,
+    height = 74,
+    ...props
+  }) => (
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 74 74"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
+      {...props}
+    >
 <rect width="74" height="74" rx="37" fill="white"/>
 <rect width="74" height="74" rx="37" fill="url(#pattern0_1001_55878)"/>
 <rect width="74" height="74" rx="37" stroke="white"/>

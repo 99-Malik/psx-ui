@@ -16,7 +16,7 @@ export const FacebookIcon = () => (
 
 export const GoogleIcon = () => (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <g clip-path="url(#clip0_2_53)">
+    <g clipPath="url(#clip0_2_53)">
     <path d="M24.0002 12.2869C24.0002 11.4782 23.9202 10.6434 23.7869 9.86084H12.2402V14.4782H18.8536C18.5869 15.9652 17.7069 17.2695 16.4002 18.1043L20.3469 21.1043C22.6669 18.9913 24.0002 15.913 24.0002 12.2869Z" fill="#4280EF"/>
     <path d="M12.24 23.974C15.5466 23.974 18.32 22.9044 20.3466 21.0783L16.4 18.1044C15.3066 18.8348 13.8933 19.2522 12.24 19.2522C9.03997 19.2522 6.34664 17.1392 5.35997 14.3218L1.30664 17.374C3.38664 21.4174 7.59997 23.974 12.24 23.974Z" fill="#34A353"/>
     <path d="M5.35919 14.2955C4.85253 12.8086 4.85253 11.1912 5.35919 9.70424L1.30586 6.62598C-0.427474 10.0173 -0.427474 14.0086 1.30586 17.3738L5.35919 14.2955Z" fill="#F6B704"/>
@@ -39,7 +39,7 @@ export const AppleIcon = () => (
 
 export const OutlookIcon = () => (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <g clip-path="url(#clip0_602_16713)">
+    <g clipPath="url(#clip0_602_16713)">
     <rect x="7.5" y="1.5" width="15" height="21" rx="0.09375" fill="#1066B5"/>
     <rect x="7.5" y="1.5" width="15" height="21" rx="0.09375" fill="url(#paint0_linear_602_16713)"/>
     <rect x="7.5" y="3.75" width="7.5" height="7.5" fill="#32A9E7"/>
@@ -61,24 +61,24 @@ export const OutlookIcon = () => (
     </g>
     <defs>
     <linearGradient id="paint0_linear_602_16713" x1="7.5" y1="12" x2="22.5" y2="12" gradientUnits="userSpaceOnUse">
-    <stop stop-color="#064484"/>
-    <stop offset="1" stop-color="#0F65B5"/>
+    <stop stopColor="#064484"/>
+    <stop offset="1" stopColor="#0F65B5"/>
     </linearGradient>
     <linearGradient id="paint1_linear_602_16713" x1="6" y1="20.0769" x2="24" y2="20.0769" gradientUnits="userSpaceOnUse">
-    <stop stop-color="#1B366F"/>
-    <stop offset="1" stop-color="#2657B0"/>
+    <stop stopColor="#1B366F"/>
+    <stop offset="1" stopColor="#2657B0"/>
     </linearGradient>
     <linearGradient id="paint2_linear_602_16713" x1="24" y1="17.25" x2="6" y2="17.25" gradientUnits="userSpaceOnUse">
-    <stop stop-color="#44DCFD"/>
-    <stop offset="0.453125" stop-color="#259ED0"/>
+    <stop stopColor="#44DCFD"/>
+    <stop offset="0.453125" stopColor="#259ED0"/>
     </linearGradient>
     <linearGradient id="paint3_linear_602_16713" x1="6" y1="17.25" x2="24" y2="17.25" gradientUnits="userSpaceOnUse">
-    <stop stop-color="#259ED0"/>
-    <stop offset="1" stop-color="#44DCFD"/>
+    <stop stopColor="#259ED0"/>
+    <stop offset="1" stopColor="#44DCFD"/>
     </linearGradient>
     <linearGradient id="paint4_linear_602_16713" x1="0" y1="12" x2="13.5" y2="12" gradientUnits="userSpaceOnUse">
-    <stop stop-color="#064484"/>
-    <stop offset="1" stop-color="#0F65B5"/>
+    <stop stopColor="#064484"/>
+    <stop offset="1" stopColor="#0F65B5"/>
     </linearGradient>
     <clipPath id="clip0_602_16713">
     <rect width="24" height="24" fill="white"/>
@@ -225,12 +225,12 @@ export const ShareBazaarLogo = () => (
 <path d="M88.3203 94.8449V80.6367H91.769V82.2185C91.9092 81.7046 92.2157 81.2516 92.6405 80.9303C93.054 80.6208 93.5781 80.4661 94.2129 80.4661V83.2988C93.8796 83.3036 93.5471 83.3337 93.2184 83.3888C92.8733 83.4386 92.5338 83.521 92.2042 83.6348C91.9141 83.7389 91.769 83.8544 91.769 83.9812V94.8449H88.3203Z" fill="black"/>
 <defs>
 <linearGradient id="paint0_linear_1049_57761" x1="65.5645" y1="16.555" x2="65.9077" y2="16.555" gradientUnits="userSpaceOnUse">
-<stop stop-color="#8025EB"/>
-<stop offset="1" stop-color="#AC21ED"/>
+<stop stopColor="#8025EB"/>
+<stop offset="1" stopColor="#AC21ED"/>
 </linearGradient>
 <linearGradient id="paint1_linear_1049_57761" x1="74.9629" y1="18.2722" x2="75.2337" y2="18.2722" gradientUnits="userSpaceOnUse">
-<stop stop-color="#8025EB"/>
-<stop offset="1" stop-color="#AC21ED"/>
+<stop stopColor="#8025EB"/>
+<stop offset="1" stopColor="#AC21ED"/>
 </linearGradient>
 </defs>
 </svg>

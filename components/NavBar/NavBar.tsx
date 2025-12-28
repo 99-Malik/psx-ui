@@ -70,7 +70,7 @@ export default function NavBar() {
         </button>
 
         {/* Profile */}
-        <div className="flex items-center gap-2 px-2 py-1 border border-[#dadce0] rounded-full cursor-pointer hover:bg-gray-50 transition-colors">
+        <div className="flex items-center gap-2 px-2 py-2 lg:px-2 lg:py-1 border border-[#dadce0] rounded-full cursor-pointer hover:bg-gray-50 transition-colors">
           {/* Avatar with image */}
           <div className="w-5 h-5 rounded-full overflow-hidden bg-pink-200 flex items-center justify-center">
             <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -81,7 +81,7 @@ export default function NavBar() {
               <path d="M12 10C12 10 13 8 16 8C19 8 20 10 20 10" stroke="#1A1A1A" strokeWidth="0.5"/>
             </svg>
           </div>
-          <span className="text-sm font-medium text-gray-700 hidden md:block">Hi, Jackie Brad!</span>
+          <span className="text-sm font-medium text-gray-700 hidden lg:block">Hi, Jackie Brad!</span>
         </div>
       </div>
     </nav>
