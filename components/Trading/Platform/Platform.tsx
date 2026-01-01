@@ -1,10 +1,10 @@
 "use client";
 
-import Banner from "./Banner";
-import GuideSection from "./GuideSection";
-import FeaturesSection from "./FeaturesSection";
-import BazarPodcast from "./BazarPodcast";
-import BazarCompetitions from "./BazarCompetitions";
+import Banner from "../Platform/Banner";
+import GuideSection from "../Platform/GuideSection";
+import FeaturesSection from "../Platform/FeaturesSection";
+import BazarPodcast from "../Platform/BazarPodcast";
+import BazarCompetitions from "../Platform/BazarCompetitions";
 
 export default function Platform() {
   return (
