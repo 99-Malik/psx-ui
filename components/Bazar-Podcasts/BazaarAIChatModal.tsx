@@ -25,9 +25,12 @@ interface BazaarAIChatModalProps {
   isOpen: boolean;
   onClose: () => void;
   podcast: Podcast | null;
+  inline?: boolean; // For inline usage in layouts
+  placeholder?: string; // Custom placeholder text
+  noFooterBackground?: boolean; // Remove footer background when true
 }
 
-export default function BazaarAIChatModal({ isOpen, onClose, podcast }: BazaarAIChatModalProps) {
+export default function BazaarAIChatModal({ isOpen, onClose, podcast, inline = false, placeholder = "Tell me about this podcast", noFooterBackground = false }: BazaarAIChatModalProps) {
   const [messages, setMessages] = useState<Message[]>([]);
   const [inputValue, setInputValue] = useState("");
   const [isTyping, setIsTyping] = useState(false);
@@ -82,10 +85,17 @@ export default function BazaarAIChatModal({ isOpen, onClose, podcast }: BazaarAI
     }, 1500);
   };
 
-  if (!isOpen || !podcast) return null;
+  // For inline mode, render even without podcast. For modal mode, require podcast.
+  if (!inline && (!isOpen || !podcast)) return null;
+  if (inline && !isOpen) return null;
+
+  // Container classes: inline vs fixed modal
+  const containerClasses = inline
+    ? "w-full h-full bg-white rounded-xl flex flex-col  border border-gray-200 overflow-hidden font-sans"
+    : "fixed bottom-6 right-6 z-50 bg-white rounded-3xl w-full max-w-[400px] h-[550px] flex flex-col shadow-2xl border border-gray-200 overflow-hidden animate-in fade-in slide-in-from-bottom-10 duration-300 font-sans";
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 bg-white rounded-3xl w-full max-w-[400px] h-[550px] flex flex-col shadow-2xl border border-gray-200 overflow-hidden animate-in fade-in slide-in-from-bottom-10 duration-300 font-sans">
+    <div className={containerClasses}>
       {/* Header */}
       <div className="flex items-center justify-between px-4 p-6 bg-[#f1f3f4] border-b border-gray-100 shrink-0">
         <div className="flex items-center gap-2">
@@ -110,8 +120,25 @@ export default function BazaarAIChatModal({ isOpen, onClose, podcast }: BazaarAI
       {/* Chat Body */}
       <div
         ref={scrollRef}
-        className="flex-1 overflow-y-auto bg-[#f8f9fa] p-4 flex flex-col gap-6 custom-scrollbar"
+        className={`flex-1 overflow-y-auto ${
+          inline && messages.length === 0
+            ? "bg-white p-6 flex flex-col items-center justify-center gap-4"
+            : "bg-[#f8f9fa] p-4 flex flex-col gap-6"
+        } custom-scrollbar`}
       >
+        {/* Initial greeting for inline mode when no messages */}
+        {inline && messages.length === 0 && !podcast && (
+          <>
+            <div className="w-24 h-24 flex items-center justify-center">
+              <SphereIcon width={96} height={96} />
+            </div>
+            <div className="text-center">
+              <p className="text-base font-bold text-gray-900 mb-1">Hey, What's Up</p>
+              <p className="text-sm text-gray-600">How Can i Help you Today?</p>
+            </div>
+          </>
+        )}
+
         {messages.map((msg) => (
           <div key={msg.id} className={`flex flex-col ${msg.type === "user" ? "items-end" : "items-start"}`}>
             <div
@@ -153,11 +180,11 @@ export default function BazaarAIChatModal({ isOpen, onClose, podcast }: BazaarAI
       </div>
 
       {/* Footer Input */}
-      <div className="px-4 pt-2 pb-4 bg-[#f8f9fa] shrink-0">
-      <div className="bg-[#f3f4f6] rounded-md rounded-r-2xl pl-4 pr-0 flex items-center gap-2">
+      <div className={`px-4 pt-2 pb-4 ${noFooterBackground ? "" : "bg-[#f8f9fa]"} shrink-0`}>
+      <div className={`bg-[#f3f4f6] rounded-md pl-4 pr-0 flex items-center gap-2 ${inline ? "pr-1 py-1" : " rounded-r-2xl"}`}>
       <input
             type="text"
-            placeholder="Tell me about this podcast"
+            placeholder={placeholder}
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && handleSend()}
@@ -165,7 +192,7 @@ export default function BazaarAIChatModal({ isOpen, onClose, podcast }: BazaarAI
           />
           <button
             onClick={handleSend}
-            className="px-5 h-8 bg-[#8025EC] text-white rounded-[20px] flex items-center justify-center text-xs font-medium hover:bg-[#6b1fc4] transition-colors"
+            className={`px-5 h-8 bg-[#8025EC] text-white ${inline ? "rounded-md" : "rounded-[20px]"} flex items-center justify-center text-xs font-medium hover:bg-[#6b1fc4] transition-colors`}
           >
             Send
           </button>

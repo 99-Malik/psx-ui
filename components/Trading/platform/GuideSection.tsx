@@ -1,108 +1,86 @@
 "use client";
 
-interface TutorialCard {
-  id: number;
-  title: string;
-  description: string;
-  thumbnail: string;
-}
+import React from "react";
+import TutorialCard from "./TutorialCard";
 
-const tutorials: TutorialCard[] = [
+const HeaderBookIcon = () => (
+  <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="32" cy="32" r="32" fill="#F8F9FA" />
+    <circle cx="32" cy="32" r="31.3846" stroke="#DADCE0" strokeWidth="1.23077" />
+    <path d="M32.0003 44.5603C31.6311 44.5603 31.2618 44.4742 30.9541 44.3018C28.6526 43.0465 24.6034 41.7172 22.068 41.3849L21.7111 41.3357C20.0988 41.1388 18.7695 39.6249 18.7695 37.988V23.1203C18.7695 22.148 19.1511 21.2618 19.8526 20.6218C20.5541 19.9818 21.4649 19.6742 22.4249 19.7603C25.1326 19.9695 29.2188 21.3234 31.5326 22.7757L31.828 22.948C31.9141 22.9972 32.0988 22.9972 32.1726 22.9603L32.3695 22.8372C34.6834 21.3849 38.7695 20.0065 41.4895 19.7726C41.5141 19.7726 41.6126 19.7726 41.6372 19.7726C42.5357 19.6865 43.4588 20.0065 44.148 20.6465C44.8495 21.2865 45.2311 22.1726 45.2311 23.1449V38.0003C45.2311 39.6495 43.9018 41.1511 42.2772 41.348L41.8711 41.3972C39.3357 41.7295 35.2741 43.0711 33.0218 44.3142C32.7265 44.4865 32.3695 44.5603 32.0003 44.5603ZM22.1295 21.5942C21.7357 21.5942 21.3788 21.7295 21.0957 21.988C20.788 22.2711 20.6157 22.6772 20.6157 23.1203V37.988C20.6157 38.7142 21.2434 39.4157 21.9449 39.5142L22.3141 39.5634C25.0834 39.9326 29.3295 41.3234 31.7911 42.6649C31.9018 42.7142 32.0618 42.7265 32.1234 42.7018C34.5849 41.3357 38.8557 39.9326 41.6372 39.5634L42.0557 39.5142C42.7572 39.428 43.3849 38.7142 43.3849 37.988V23.1326C43.3849 22.6772 43.2126 22.2834 42.9049 21.988C42.5849 21.7049 42.1788 21.5695 41.7234 21.5942C41.6988 21.5942 41.6003 21.5942 41.5757 21.5942C39.2249 21.8034 35.4341 23.0711 33.3665 24.3634L33.1695 24.4988C32.4926 24.9172 31.5326 24.9172 30.8803 24.5111L30.5849 24.3388C28.4803 23.0465 24.6895 21.7911 22.2772 21.5942C22.228 21.5942 22.1788 21.5942 22.1295 21.5942Z" fill="#8025EC" />
+    <path d="M31.9992 43.5264C31.4946 43.5264 31.0762 43.108 31.0762 42.6034V24.1418C31.0762 23.6372 31.4946 23.2188 31.9992 23.2188C32.5039 23.2188 32.9223 23.6372 32.9223 24.1418V42.6034C32.9223 43.1203 32.5039 43.5264 31.9992 43.5264Z" fill="#8025EC" />
+    <path d="M26.7685 28.7573H23.9992C23.4946 28.7573 23.0762 28.3388 23.0762 27.8342C23.0762 27.3296 23.4946 26.9111 23.9992 26.9111H26.7685C27.2731 26.9111 27.6916 27.3296 27.6916 27.8342C27.6916 28.3388 27.2731 28.7573 26.7685 28.7573Z" fill="#8025EC" />
+    <path d="M27.6916 32.4497H23.9992C23.4946 32.4497 23.0762 32.0312 23.0762 31.5266C23.0762 31.022 23.4946 30.6035 23.9992 30.6035H27.6916C28.1962 30.6035 28.6146 31.022 28.6146 31.5266C28.6146 32.0312 28.1962 32.4497 27.6916 32.4497Z" fill="#8025EC" />
+  </svg>
+
+
+
+);
+
+const tutorials = [
   {
     id: 1,
-    title: "ChatBot Help",
-    description: "How to use Share Bazaar as a Software or a gateway to trade stocks ad get profits in your pocket.",
-    thumbnail: "chart"
+    title: "Tutorial 1",
+    subtitle: "ChatBot Help",
+    description: "How to use Share Bazaar as a Software or a gateway to trade stocks and get profits in your pocket",
+    imageSrc: "/solar-5.jpg",
   },
   {
     id: 2,
-    title: "Trading Bot",
-    description: "How to use Share Bazaar as a Software or a gateway to trade stocks ad get profits in your pocket.",
-    thumbnail: "cards"
+    title: "Tutorial 2",
+    subtitle: "Trading Bot",
+    description: "How to use Share Bazaar as a Software or a gateway to trade stocks and get profits in your pocket",
+    imageSrc: "https://images.unsplash.com/photo-1642543492481-44e81e3914a7?auto=format&fit=crop&q=80&w=800",
   },
   {
     id: 3,
-    title: "News Summary",
-    description: "How to use Share Bazaar as a Software or a gateway to trade stocks ad get profits in your pocket.",
-    thumbnail: "person"
+    title: "Tutorial 3",
+    subtitle: "News Summary",
+    description: "How to use Share Bazaar as a Software or a gateway to trade stocks and get profits in your pocket",
+    imageSrc: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&q=80&w=800",
   }
 ];
 
 export default function GuideSection() {
   return (
-    <div className="mb-12">
-      {/* Header */}
-      <div className="flex flex-col items-center mb-8 text-center">
-        <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center mb-4 shadow-md">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M4 19.5C4 18.837 4.26339 18.2011 4.73223 17.7322C5.20107 17.2634 5.83696 17 6.5 17H20" stroke="#8025EC" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            <path d="M6.5 2H17.5L20 6V17H6.5C5.83696 17 5.20107 17.2634 4.73223 17.7322C4.26339 18.2011 4 18.837 4 19.5C4 20.163 4.26339 20.7989 4.73223 21.2678C5.20107 21.7366 5.83696 22 6.5 22C7.16304 22 7.79893 21.7366 8.26777 21.2678C8.73661 20.7989 9 20.163 9 19.5" stroke="#8025EC" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            <path d="M6.5 2L4 6H17.5" stroke="#8025EC" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
+    <div className="w-full bg-[#f8f9fa] pb-4 h-full border-gray-200">
+      <div className="w-full mx-auto px-4 md:px-6 lg:px-8 pt-8 pb-8">
+        {/* Section Header Icon */}
+        <div className=" rounded-full mt-8 mb-4 flex items-center justify-center">
+          <HeaderBookIcon />
         </div>
-        <h2 className="text-3xl font-bold text-gray-900 mb-2">
-          <span className="text-[#8025EC]">Share Bazaar</span> Guide
+
+        {/* Title */}
+        <h2 className="text-xl md:text-3xl font-semibold text-center mb-2">
+          <span className="text-primary">Share Bazaar</span> <span className="text-gray-900">Guide</span>
         </h2>
-        <p className="text-gray-500 text-sm md:text-base">
+
+        {/* Subtitle */}
+        <p className="text-[#80868B] text-base text-center mb-8">
           You can view all the videos to learn how this platform works
         </p>
-      </div>
 
-      {/* Tutorial Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-        {tutorials.map((tutorial) => (
-          <div key={tutorial.id} className="bg-white rounded-3xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 group cursor-pointer">
-            <div className="p-4 flex items-center gap-3 border-b border-gray-50">
-              <div className="w-10 h-10 rounded-full bg-[#f3e8ff] flex items-center justify-center text-[#8025EC]">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" /><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" /></svg>
-              </div>
-              <div className="flex-1">
-                <h3 className="font-bold text-gray-900 text-sm">{tutorial.title}</h3>
-                <p className="text-xs text-gray-500 capitalize">{tutorial.description.split(" ").slice(0, 2).join(" ")}</p>
-              </div>
-              <div className="text-gray-400">•••</div>
+        {/* Cards Grid */}
+        <div className="flex flex-wrap gap-6 mb-10 justify-center">
+          {tutorials.map((tutorial) => (
+            <div key={tutorial.id} className="flex-1 min-w-[300px] max-w-[calc(33.333%-1rem)]">
+              <TutorialCard
+                title={tutorial.title}
+                subtitle={tutorial.subtitle}
+                description={tutorial.description}
+                imageSrc={tutorial.imageSrc}
+              />
             </div>
+          ))}
+        </div>
 
-            {/* Thumbnail Mockup */}
-            <div className="h-48 bg-gray-50 relative p-4 flex items-center justify-center overflow-hidden">
-              {/* Card Content Mockup */}
-              <div className="w-full h-full bg-white rounded-xl shadow-sm border border-gray-100 p-3 flex flex-col gap-2 relative z-10">
-                <div className="flex gap-2 mb-2">
-                  <div className="w-8 h-8 rounded-full bg-gray-200"></div>
-                  <div className="h-2 w-20 bg-gray-200 rounded mt-3"></div>
-                </div>
-                <div className="flex-1 bg-gray-50 rounded-lg"></div>
-                {/* Play Overlay */}
-                <div className="absolute inset-0 flex items-center justify-center bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity rounded-xl">
-                  <div className="w-12 h-12 bg-[#8025EC] rounded-full flex items-center justify-center text-white shadow-lg transform scale-90 group-hover:scale-100 transition-transform">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg>
-                  </div>
-                </div>
-              </div>
-
-              {/* Decorative Background Blobs specific to type */}
-              {tutorial.thumbnail === 'chart' && <div className="absolute -right-4 -bottom-4 w-32 h-32 bg-blue-100 rounded-full blur-2xl"></div>}
-              {tutorial.thumbnail === 'cards' && <div className="absolute -left-4 -top-4 w-32 h-32 bg-purple-100 rounded-full blur-2xl"></div>}
-              {tutorial.thumbnail === 'person' && <div className="absolute top-1/2 left-1/2 w-32 h-32 bg-green-100 rounded-full blur-2xl transform -translate-x-1/2 -translate-y-1/2"></div>}
-            </div>
-
-            {/* Description */}
-            <div className="p-5">
-              <p className="text-xs text-gray-600 leading-relaxed line-clamp-2">
-                {tutorial.description}
-              </p>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {/* See All Button */}
-      <div className="flex justify-center">
-        <button className="px-10 py-3 bg-[#8025EC] text-white rounded-full font-bold shadow-lg shadow-purple-200 hover:bg-[#6b1fce] hover:scale-105 transition-all">
-          See All
-        </button>
+        {/* See All Button */}
+        <div className="flex justify-center mb-6">
+          <button className="px-8 py-3 mt-8  bg-[#8025EC] text-white rounded-full font-semibold text-sm hover:bg-[#6b1fc4] transition-all shadow-lg hover:shadow-xl">
+            See All
+          </button>
+        </div>
       </div>
     </div>
   );
 }
-

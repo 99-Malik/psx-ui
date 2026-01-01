@@ -19,7 +19,7 @@ export default function AppLayout({ children }: AppLayoutProps) {
         <NavBar />
         
         {/* Page Content */}
-        <main className="flex-1 flex overflow-y-auto lg:overflow-hidden">
+        <main className="flex-1 flex overflow-y-auto ">
           {children}
         </main>
       </div>

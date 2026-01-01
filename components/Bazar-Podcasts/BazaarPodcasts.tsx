@@ -233,7 +233,7 @@ export default function BazaarPodcasts() {
   return (
     <div className="flex flex-col w-full px-4 pt-4">
       {/* Heading */}
-      <h1 className="text-2xl font-bold text-gray-900 mb-4 shrink-0">Bazaar Podcasts</h1>
+      <h1 className="text-lg font-bold text-gray-900 mb-4 shrink-0">Bazaar Podcasts</h1>
 
       {/* Two Sections */}
       <div className="flex flex-col lg:flex-row gap-4 lg:flex-1 lg:overflow-hidden lg:min-h-0">

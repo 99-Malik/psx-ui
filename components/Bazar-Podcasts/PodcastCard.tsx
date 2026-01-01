@@ -6,6 +6,7 @@ interface PodcastCardProps {
   duration: string;
   isActive?: boolean;
   onClick?: () => void;
+  bg?: string;
 }
 
 export default function PodcastCard({
@@ -16,14 +17,18 @@ export default function PodcastCard({
   duration,
   isActive = false,
   onClick,
+  bg,
 }: PodcastCardProps) {
+  const defaultBg = isActive
+    ? "bg-primary/5 border-primary"
+    : "bg-white border-gray-200 hover:bg-gray-50";
+  
+  const backgroundClass = bg || defaultBg;
+
   return (
     <button
       onClick={onClick}
-      className={`w-full flex items-center gap-4 py-4 pl-4 pr-8 rounded-xl border transition-all ${isActive
-          ? "bg-primary/5 border-primary"
-          : "bg-white border-gray-200 hover:bg-gray-50"
-        }`}
+      className={`w-full flex items-center gap-4 py-4 pl-4 pr-8 rounded-xl border transition-all ${backgroundClass}`}
     >
       {/* Thumbnail */}
       <div className="w-16 h-16 shrink-0 rounded-lg overflow-hidden bg-gray-200">
